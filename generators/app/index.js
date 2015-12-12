@@ -6,32 +6,42 @@ var yosay = require('yosay');
 var jhipster = require('generator-jhipster');
 
 // Stores JHipster variables
-var jhipsterVar = {moduleName: 'fortune'};
+var jhipsterVar = {moduleName: 'angular-ui'};
 
 // Stores JHipster functions
 var jhipsterFunc = {};
 
 module.exports = yeoman.generators.Base.extend({
 
-  templates: function() {
-    this.composeWith('jhipster:modules', { options: {
-        jhipsterVar: jhipsterVar, jhipsterFunc: jhipsterFunc }});
+  templates: function () {
+    this.composeWith('jhipster:modules', {
+      options: {
+        jhipsterVar: jhipsterVar, jhipsterFunc: jhipsterFunc
+      }
+    });
   },
 
   prompting: function () {
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log( yosay(
-      'Welcome to the ' + chalk.red('JHipster Fortune') + ' generator!'
+    this.log(yosay(
+      'Welcome to the ' + chalk.red('JHipster AngularUI') + ' generator!'
     ));
 
-    var prompts = [{
-      type: 'input',
-      name: 'userFortune',
-      message: 'Please write your own fortune cookie',
-      default: 'Do. Or do not. There is no try.'
-    }];
+    var prompts = [
+      {
+        type: 'checkbox',
+        name: 'libraries',
+        message: 'Which library do you like to use?',
+        choices: [
+          {name: 'font-awesome', value: 'fontAwesome'},
+          {name: 'knob', value: 'knob'},
+          {name: 'slider', value: 'slider'}
+        ],
+        default: ['none']
+      }
+    ];
 
     this.prompt(prompts, function (props) {
       this.props = props;
@@ -47,13 +57,16 @@ module.exports = yeoman.generators.Base.extend({
     this.baseName = jhipsterVar.baseName;
     this.packageName = jhipsterVar.packageName;
     this.angularAppName = jhipsterVar.angularAppName;
-    var javaDir = jhipsterVar.javaDir;
-    var resourceDir = jhipsterVar.resourceDir;
     var webappDir = jhipsterVar.webappDir;
 
-    this.userFortune = this.props.userFortune;
+    this.libraries = this.props.libraries;
 
-    this.template('src/main/java/package/domain/_Fortune.java', javaDir + 'domain/Fortune.java');
+    if (this.libraries.indexOf('fontAwesome') != -1) {
+      jhipsterFunc.addBowerDependency('font-awesome', '4.5.0');
+      jhipsterFunc.addBowerOverride('font-awesome', [ 'css/font-awesome.css' ]);
+    }
+
+    /*this.template('src/main/java/package/domain/_Fortune.java', javaDir + 'domain/Fortune.java');
     this.template('src/main/java/package/repository/_FortuneRepository.java', javaDir + 'repository/FortuneRepository.java');
     this.template('src/main/java/package/web/rest/_FortuneResource.java', javaDir + 'web/rest/FortuneResource.java');
     this.template('src/main/resources/config/liquibase/_fortunes.csv', resourceDir + 'config/liquibase/fortunes.csv');
@@ -74,7 +87,7 @@ module.exports = yeoman.generators.Base.extend({
     jhipsterFunc.addElementTranslationKey('fortune', 'Fortune', 'fr');
 
     jhipsterFunc.copyI18nFilesByName(this, webappDir, 'fortune.json', 'en');
-    jhipsterFunc.copyI18nFilesByName(this, webappDir, 'fortune.json', 'fr');
+    jhipsterFunc.copyI18nFilesByName(this, webappDir, 'fortune.json', 'fr');*/
     done();
   },
 
