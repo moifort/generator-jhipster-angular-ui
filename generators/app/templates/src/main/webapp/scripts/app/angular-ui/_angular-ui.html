@@ -1,5 +1,5 @@
 <div ng-cloak>
-    <%_ if (modules.indexOf('fontAwesome') != -1) { _%>
+    <%_ if (buildFontAwesomeSample) { _%>
     <h2><i class="fa fa-flag fa-fw"></i> Font Awesome</h2>
     <hr>
     <div class="row" class="text-center">
@@ -52,12 +52,8 @@
 
 
 
-    <%_ if (modules.indexOf('awesomeCheckbox') != -1) { _%>
-    <h2><div class="checkbox">
-        <input type="checkbox" aria-label="Single checkbox Two" checked="" value="option2" id="singleCheckbox2" class="styled">
-        <label></label>
-    </div> Awesome Bootstrap Checkbox
-    </h2>
+    <%_ if (buildAwesomeBootstrapCheckboxSample) { _%>
+    <h2><i class="fa fa-check fa-fw"></i> Awesome Bootstrap Checkbox</h2>
     <hr>
     <div class="row" class="text-center">
         <div class="col-sm-8">
@@ -66,15 +62,15 @@
             <h3>Use</h3>
             <div class="highlight">
                 <pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">role</span>=<span class="pl-s"><span class="pl-pds">"</span>form<span class="pl-pds">"</span></span>&gt;
-                  ...
-                  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span>&gt;
-                    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
-                    &lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
-                        Check me out
-                    &lt;/<span class="pl-ent">label</span>&gt;
-                  &lt;/<span class="pl-ent">div</span>&gt;
-                  ...
-                &lt;/<span class="pl-ent">form</span>&gt;
+  ...
+  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
+        Check me out
+    &lt;/<span class="pl-ent">label</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;
+  ...
+&lt;/<span class="pl-ent">form</span>&gt;
                 </pre>
             </div>
             <h3>Sample</h3>
@@ -175,7 +171,7 @@
 
 
 
-    <%_ if (modules.indexOf('switchery') != -1) { _%>
+    <%_ if (buildSwitcherySample) { _%>
     <h2><input type="checkbox" class="js-switch" ui-switch="{color: '#333333', secondaryColor: '#333333'}" ng-model="switcheryValue"/> NGSwitchery</h2>
     <hr>
     <div class="row" class="text-center">
