@@ -1,12 +1,12 @@
 <div ng-cloak>
-    <%_ if (libraries.indexOf('fontAwesome') != -1) { _%>
+    <%_ if (modules.indexOf('fontAwesome') != -1) { _%>
     <h2><i class="fa fa-flag fa-fw"></i> Font Awesome</h2>
     <hr>
     <div class="row" class="text-center">
         <div class="col-sm-8">
             <h3>Overview</h3>
             <p>Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.</p>
-            <h3>Usage</h3>
+            <h3>Use</h3>
             <div class="highlight"><pre><code class="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-camera-retro"</span><span class="nt">&gt;&lt;/i&gt;</span></code></pre></div>
             <h3>Sample</h3>
             <div class="row" class="text-center">
@@ -46,5 +46,160 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <%_ } _%>
+
+
+
+    <%_ if (modules.indexOf('awesomeCheckbox') != -1) { _%>
+    <h2><div class="checkbox">
+        <input type="checkbox" aria-label="Single checkbox Two" checked="" value="option2" id="singleCheckbox2" class="styled">
+        <label></label>
+    </div> Awesome Bootstrap Checkbox
+    </h2>
+    <hr>
+    <div class="row" class="text-center">
+        <div class="col-sm-8">
+            <h3>Overview</h3>
+            <p>Font Awesome Bootstrap Checkboxes & Radios plugin. Pure CSS way to make inputs look prettier. No Javascript!</p>
+            <h3>Use</h3>
+            <div class="highlight">
+                <pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">role</span>=<span class="pl-s"><span class="pl-pds">"</span>form<span class="pl-pds">"</span></span>&gt;
+                  ...
+                  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span>&gt;
+                    &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
+                    &lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox1<span class="pl-pds">"</span></span>&gt;
+                        Check me out
+                    &lt;/<span class="pl-ent">label</span>&gt;
+                  &lt;/<span class="pl-ent">div</span>&gt;
+                  ...
+                &lt;/<span class="pl-ent">form</span>&gt;
+                </pre>
+            </div>
+            <h3>Sample</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <fieldset>
+                        <div class="checkbox">
+                            <input id="checkbox1" class="styled" type="checkbox">
+                            <label for="checkbox1">
+                                Default
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-primary">
+                            <input id="checkbox2" class="styled" type="checkbox" checked="">
+                            <label for="checkbox2">
+                                Primary
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-success">
+                            <input id="checkbox3" class="styled" type="checkbox">
+                            <label for="checkbox3">
+                                Success
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-info">
+                            <input id="checkbox4" class="styled" type="checkbox">
+                            <label for="checkbox4">
+                                Info
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-warning">
+                            <input id="checkbox5" type="checkbox" class="styled" checked="">
+                            <label for="checkbox5">
+                                Warning
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-danger">
+                            <input id="checkbox6" type="checkbox" class="styled" checked="">
+                            <label for="checkbox6">
+                                Check me out
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-4">
+                    <fieldset>
+                        <div class="checkbox checkbox-circle">
+                            <input id="checkbox7" class="styled" type="checkbox">
+                            <label for="checkbox7">
+                                Simply Rounded
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-info checkbox-circle">
+                            <input id="checkbox8" class="styled" type="checkbox" checked="">
+                            <label for="checkbox8">
+                                Me too
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-4">
+                    <fieldset>
+                        <div class="checkbox">
+                            <input class="styled" id="checkbox9" type="checkbox" disabled="">
+                            <label for="checkbox9">
+                                Can't check this
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-success">
+                            <input class="styled styled" id="checkbox10" type="checkbox" disabled="" checked="">
+                            <label for="checkbox10">
+                                This too
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox-warning checkbox-circle">
+                            <input class="styled" id="checkbox11" type="checkbox" disabled="" checked="">
+                            <label for="checkbox11">
+                                And this
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Source</div>
+                <div class="panel-body">
+                    <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/flatlogic/awesome-bootstrap-checkbox">flatlogic/awesome-bootstrap-checkbox</a></p>
+                    <p><i class="fa fa-globe fa-fw"></i></span> <a href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/">http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <%_ } _%>
+
+
+
+    <%_ if (modules.indexOf('switchery') != -1) { _%>
+    <h2><input type="checkbox" class="js-switch" ui-switch="{color: '#333333', secondaryColor: '#333333'}" ng-model="switcheryValue"/> NGSwitchery</h2>
+    <hr>
+    <div class="row" class="text-center">
+        <div class="col-sm-8">
+            <h3>Overview</h3>
+            <p>Switchery is a simple component that helps you turn your default HTML checkbox inputs into beautiful iOS 7 style switches in just few simple steps. You can easily customize switches, so that they match your design perfectly.</p>
+            <h3>Use</h3>
+            <div class="highlight"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>checkbox<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>js-switch<span class="pl-pds">"</span></span> <span class="pl-e">ui-switch</span> <span class="pl-e">checked</span> /&gt;</pre></div>
+            <h3>Sample</h3>
+            <div>
+                <input type="checkbox" class="js-switch" ui-switch ng-model="switcheryValue"/> value: {{ switcheryValue }}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Source</div>
+                <div class="panel-body">
+                    <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/servergrove/NgSwitchery">servergrove/NgSwitchery</a></p>
+                    <p><i class="fa fa-globe fa-fw"></i></span> <a href="http://abpetkov.github.io/switchery/">http://abpetkov.github.io/switchery/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
     <%_ } _%>
 </div>

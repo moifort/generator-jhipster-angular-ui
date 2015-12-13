@@ -32,14 +32,15 @@ module.exports = yeoman.generators.Base.extend({
         var prompts = [
             {
                 type: 'checkbox',
-                name: 'libraries',
-                message: 'Which library do you like to use?',
+                name: 'modules',
+                message: 'Which module do you like to install on your JHipster application?',
                 choices: [
-                    {name: 'font-awesome', value: 'fontAwesome'},
-                    {name: 'knob', value: 'knob'},
+                    {name: 'Font Awesome', value: 'fontAwesome'},
+                    {name: 'Awesome Checkbox (+Font Awesome)', value: 'awesomeCheckbox'},
+                    {name: 'Switchery', value: 'switchery'},
                     {name: 'slider', value: 'slider'}
                 ],
-                default: ['none']
+                default: 'none'
             }
         ];
 
@@ -59,11 +60,25 @@ module.exports = yeoman.generators.Base.extend({
         this.angularAppName = jhipsterVar.angularAppName;
         var webappDir = jhipsterVar.webappDir;
 
-        this.libraries = this.props.libraries;
+        this.modules = this.props.modules;
 
-        if (this.libraries.indexOf('fontAwesome') != -1) {
+        if (this.modules.length === 0) {
+            console.log('No module to install.');
+            return;
+        }
+
+        if (this.modules.indexOf('fontAwesome') != -1) {
             jhipsterFunc.addBowerDependency('font-awesome', '4.5.0');
             jhipsterFunc.addBowerOverride('font-awesome', ['css/font-awesome.css']);
+        }
+
+        if (this.modules.indexOf('awesomeCheckbox') != -1) {
+            jhipsterFunc.addBowerDependency('awesome-bootstrap-checkbox', '0.3.5');
+        }
+
+        if (this.modules.indexOf('switchery') != -1) {
+            jhipsterFunc.addBowerDependency('ng-switchery', '1.0.0-alpha7');
+            jhipsterFunc.addAngularJsModule('NgSwitchery');
         }
 
         this.template('src/main/webapp/scripts/app/angular-ui/_angular-ui.controller.js', webappDir + 'scripts/app/angular-ui/angular-ui.controller.js');
@@ -77,7 +92,19 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function () {
-        this.installDependencies();
-        this.spawnCommand('grunt', ['wiredep:app']);
+        this.frontendBuilder = jhipsterVar.frontendBuilder;
+        var _injectDependenciesAndConstants = function () {
+            switch (this.frontendBuilder) {
+                case 'gulp':
+                    this.spawnCommand('gulp', ['ngconstant:dev', 'wiredep:test', 'wiredep:app']);
+                    break;
+                case 'grunt':
+                default:
+                    this.spawnCommand('grunt', ['ngconstant:dev', 'wiredep']);
+            }
+        };
+
+        this.installDependencies( { callback: _injectDependenciesAndConstants.bind(this) });
     }
 });
+
