@@ -53,7 +53,7 @@
 
 
     <%_ if (buildAwesomeBootstrapCheckboxSample) { _%>
-    <h2><i class="fa fa-check fa-fw"></i> Awesome Bootstrap Checkbox</h2>
+    <h2><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Awesome Bootstrap Checkbox</h2>
     <hr>
     <div class="row" class="text-center">
         <div class="col-sm-8">
@@ -191,6 +191,35 @@
                 <div class="panel-body">
                     <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/servergrove/NgSwitchery">servergrove/NgSwitchery</a></p>
                     <p><i class="fa fa-globe fa-fw"></i></span> <a href="http://abpetkov.github.io/switchery/">http://abpetkov.github.io/switchery/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <%_ } _%>
+
+    <%_ if (buildAngularBootstrapSliderSample) { _%>
+    <h2><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Angular Bootstrap Slider</h2>
+    <hr>
+    <div class="row" class="text-center">
+        <div class="col-sm-8">
+            <h3>Overview</h3>
+            <p></p>
+            <h3>Use</h3>
+            <div class="highlight"><pre>&lt;<span class="pl-ent">span</span> <span class="pl-e">slider</span> <span class="pl-e">ng-model</span>=<span class="pl-s"><span class="pl-pds">"</span>sliders.secondSliderValue<span class="pl-pds">"</span></span> <span class="pl-e">min</span>=<span class="pl-s"><span class="pl-pds">"</span>minTest<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;</pre></div>
+            <h3>Sample</h3>
+            <div>
+                Value: {{ slider.value }}
+                <slider ng-model="slider.value" min="slider.min" max="slider.max" step="slider.step"></slider>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Source</div>
+                <div class="panel-body">
+                    <p><i class="fa fa-github fa-fw"></i> <a href="https://github.com/seiyria/angular-bootstrap-slider">seiyria/angular-bootstrap-slider</a></p>
+                    <p><i class="fa fa-globe fa-fw"></i></span> <a href="http://seiyria.com/bootstrap-slider/">http://seiyria.com/bootstrap-slider/</a></p>
                 </div>
             </div>
         </div>

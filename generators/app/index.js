@@ -1,12 +1,10 @@
 'use strict';
-var util = require('util');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var jhipster = require('generator-jhipster');
 
 // Stores JHipster variables
-var jhipsterVar = {moduleName: 'angular-ui'};
+var jhipsterVar = {moduleName: 'AngularUI'};
 
 // Stores JHipster functions
 var jhipsterFunc = {};
@@ -38,7 +36,7 @@ module.exports = yeoman.generators.Base.extend({
                     {name: 'Install all modules', value: 'all'},
                     {name: 'Font Awesome', value: 'fontAwesome'},
                     {name: 'Awesome Bootstrap Checkbox (+Font Awesome)', value: 'awesomeBootstrapCheckbox'},
-                    {name: 'Switchery', value: 'switchery'},
+                    {name: 'NGSwitchery', value: 'switchery'},
                     {name: 'Angular Bootstrap Slider', value: 'angularBootstrapSlider'}
                 ],
                 default: 'none'
@@ -64,37 +62,38 @@ module.exports = yeoman.generators.Base.extend({
         this.modules = this.props.modules;
 
         if (this.modules.length === 0) {
-            console.log('No module to install.');
+            this.log(chalk.yellow('No module to install'));
+            done();
             return;
         }
 
         // Before install
-        var installAll = (this.modules.indexOf('all') != -1);
-        var installFontAwesome = (this.modules.indexOf('awesomeBootstrapCheckbox') != -1);
+        var installAll = (this.modules.indexOf('all') !== -1);
+        var installFontAwesome = (this.modules.indexOf('awesomeBootstrapCheckbox') !== -1);
 
         // Install
         this.buildFontAwesomeSample = false;
-        if (installAll || installFontAwesome || this.modules.indexOf('fontAwesome') != -1) {
+        if (installAll || installFontAwesome || this.modules.indexOf('fontAwesome') !== -1) {
             jhipsterFunc.addBowerDependency('font-awesome', '4.5.0');
             jhipsterFunc.addBowerOverride('font-awesome', ['css/font-awesome.css']);
             this.buildFontAwesomeSample = true;
         }
 
         this.buildAwesomeBootstrapCheckboxSample = false;
-        if (installAll || this.modules.indexOf('awesomeBootstrapCheckbox') != -1) {
+        if (installAll || this.modules.indexOf('awesomeBootstrapCheckbox') !== -1) {
             jhipsterFunc.addBowerDependency('awesome-bootstrap-checkbox', '0.3.5');
             this.buildAwesomeBootstrapCheckboxSample = true;
         }
 
         this.buildSwitcherySample = false;
-        if (installAll || this.modules.indexOf('switchery') != -1) {
+        if (installAll || this.modules.indexOf('switchery') !== -1) {
             jhipsterFunc.addBowerDependency('ng-switchery', '1.0.0-alpha7');
             jhipsterFunc.addAngularJsModule('NgSwitchery');
             this.buildSwitcherySample = true;
         }
 
         this.buildAngularBootstrapSliderSample = false;
-        if (installAll || this.modules.indexOf('angularBootstrapSlider') != -1) {
+        if (installAll || this.modules.indexOf('angularBootstrapSlider') !== -1) {
             jhipsterFunc.addBowerDependency('angular-bootstrap-slider', '0.1.21');
             jhipsterFunc.addAngularJsModule('ui.bootstrap-slider');
             this.buildAngularBootstrapSliderSample = true;
@@ -112,8 +111,10 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function () {
+        if (this.modules.length === 0) return;
+
         this.frontendBuilder = jhipsterVar.frontendBuilder;
-        var _injectDependenciesAndConstants = function () {
+        var injectDependenciesAndConstants = function () {
             switch (this.frontendBuilder) {
                 case 'gulp':
                     this.spawnCommand('gulp', ['ngconstant:dev', 'wiredep:test', 'wiredep:app']);
@@ -124,7 +125,7 @@ module.exports = yeoman.generators.Base.extend({
             }
         };
 
-        this.installDependencies( { callback: _injectDependenciesAndConstants.bind(this) });
+        this.installDependencies({callback: injectDependenciesAndConstants.bind(this)});
     }
 });
 
