@@ -13,10 +13,6 @@
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be use in a JHipster application.
 
 ![](/static/generator-jhipster-angular-ui.gif)
-<<<<<<< HEAD
-=======
-
->>>>>>> c82a7e98447347a6850d053de2b489435677e55b
 
 ## Installation
 
