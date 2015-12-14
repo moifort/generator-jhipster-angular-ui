@@ -1,5 +1,5 @@
 # generator-jhipster-angular-ui
-[![NPM version][npm-image]][npm-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Install easily and get sample code of the most famous AngularUI library on your JHipster application.
 
 ## Usage
