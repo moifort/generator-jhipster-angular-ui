@@ -27,5 +27,5 @@ yo jhipster-angular-ui
 Apache-2.0 © Thibaut Mottet
 
 
-[npm-image]: https://img.shields.io/npm/v/generator-jhipster-angualar-ui.svg
-[npm-url]: https://npmjs.org/package/generator-jhipster-angualar-ui
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-angular-ui.svg
+[npm-url]: https://npmjs.org/package/generator-jhipster-angular-ui
