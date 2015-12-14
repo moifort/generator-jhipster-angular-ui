@@ -1,5 +1,5 @@
 # generator-jhipster-angular-ui
-[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Install easily and get sample code of the most famous AngularUI library on your JHipster application.
 
 ## Usage
@@ -31,3 +31,5 @@ Apache-2.0 © Thibaut Mottet
 [npm-url]: https://npmjs.org/package/generator-jhipster-angular-ui
 [daviddm-image]: https://david-dm.org/moifort/generator-jhipster-angular-ui.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/moifort/generator-jhipster-angular-ui
+[travis-image]: https://travis-ci.org/moifort/generator-jhipster-angular-ui.svg?branch=master
+[travis-url]: https://travis-ci.org/moifort/generator-jhipster-angular-ui
