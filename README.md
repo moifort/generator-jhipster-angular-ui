@@ -29,3 +29,5 @@ Apache-2.0 © Thibaut Mottet
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-angular-ui.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-angular-ui
+[daviddm-image]: https://david-dm.org/moifort/generator-jhipster-angular-ui.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/moifort/generator-jhipster-angular-ui
