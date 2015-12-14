@@ -1,4 +1,5 @@
 # generator-jhipster-angular-ui
+[![NPM version][npm-image]][npm-url]
 > Install easily and get sample code of the most famous AngularUI library on your JHipster application.
 
 ## Usage
@@ -24,3 +25,7 @@ yo jhipster-angular-ui
 ## License
 
 Apache-2.0 © Thibaut Mottet
+
+
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-angualar-ui.svg
+[npm-url]: https://npmjs.org/package/generator-jhipster-angualar-ui
