@@ -1,7 +1,7 @@
 {
   "name": "generator-jhipster-angular-ui",
   "version": "0.0.1",
-  "description": "Install AngularUI librairies on your JHipster app",
+  "description": "Install AngularUI module on your JHipster app",
   "homepage": "https://github.com/moifort/generator-jhipster-angular-ui",
   "author": {
     "name": "Thibaut Mottet",
