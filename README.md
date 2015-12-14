@@ -12,6 +12,8 @@
 
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be use in a JHipster application.
 
+![](/static/generator-jhipster-angular-ui.gif)
+
 
 ## Installation
 
