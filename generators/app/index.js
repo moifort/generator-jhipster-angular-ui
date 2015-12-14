@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 // Stores JHipster variables
-var jhipsterVar = {moduleName: 'AngularUI'};
+var jhipsterVar = {moduleName: 'angular-ui'};
 
 // Stores JHipster functions
 var jhipsterFunc = {};
@@ -61,10 +61,11 @@ module.exports = yeoman.generators.Base.extend({
 
         this.modules = this.props.modules;
 
+        this.nothingToDo = false;
         if (this.modules.length === 0) {
+            this.nothingToDo = true;
             this.log(chalk.yellow('No module to install'));
             done();
-            return;
         }
 
         // Before install
@@ -125,7 +126,11 @@ module.exports = yeoman.generators.Base.extend({
             }
         };
 
-        this.installDependencies({callback: injectDependenciesAndConstants.bind(this)});
+        this.installDependencies({
+                skipInstall: this.nothingToDo,
+                callback: injectDependenciesAndConstants.bind(this)
+            }
+        );
     }
 });
 
