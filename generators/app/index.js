@@ -107,10 +107,8 @@ module.exports = yeoman.Base.extend({
 
         // Sample page
         this.template('src/main/webapp/app/angular-ui/_angular-ui.controller.js', webappDir + 'app/angular-ui/angular-ui.controller.js');
-        // jhipsterFunc.addJavaScriptToIndex('app/angular-ui/angular-ui.controller.js');
         this.template('src/main/webapp/app/angular-ui/_angular-ui.html', webappDir + 'app/angular-ui/angular-ui.html');
         this.template('src/main/webapp/app/angular-ui/_angular-ui.js', webappDir + 'app/angular-ui/angular-ui.js');
-        // jhipsterFunc.addJavaScriptToIndex('app/angular-ui/angular-ui.js');
         jhipsterFunc.addElementToMenu('angular-ui', 'tint', false);
 
         done();
