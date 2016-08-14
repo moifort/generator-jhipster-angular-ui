@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var packagejs = require(__dirname + '/../../package.json');
 
 // Stores JHipster variables
 var jhipsterVar = {moduleName: 'angular-ui'};
@@ -24,7 +25,7 @@ module.exports = yeoman.generators.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the ' + chalk.red('JHipster AngularUI') + ' generator!'
+            'Welcome to the ' + chalk.red('JHipster AngularUI') + ' generator! ' + chalk.yellow('v' + packagejs.version)
         ));
 
         var prompts = [
@@ -133,4 +134,3 @@ module.exports = yeoman.generators.Base.extend({
         );
     }
 });
-
