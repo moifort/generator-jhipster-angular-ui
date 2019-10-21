@@ -20,7 +20,7 @@
     "yeoman-generator": "0.21.1",
     "chalk": "1.0.0",
     "yosay": "1.0.2",
-    "generator-jhipster": "3.4.2"
+    "generator-jhipster": "6.4.1"
   },
   "devDependencies": {
     "fs-extra": "0.26.4",
